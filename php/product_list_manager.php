@@ -138,11 +138,11 @@
                     </a>
                 ";
             }
-            
-            $categorias_encontradas_norepeat=array_unique($categorias_encontradas);//Elimino valores duplicados
+                  
+            $categorias_encontradas_norepeat=array_values(array_unique($categorias_encontradas));//Elimino valores duplicados
 
             if(isset($subcategorias_encontradas)){
-                $subcategorias_encontradas_norepeat=array_unique($subcategorias_encontradas);
+                $subcategorias_encontradas_norepeat=array_values(array_unique($subcategorias_encontradas));
             }
            
     }
@@ -222,7 +222,7 @@
         }
 
         for($f=0;$f<count($categorias_encontradas_norepeat);$f++){
-
+            
             for($f1=0;$f1<count($categorias_encontradas);$f1++){//Revisa el array de categorias encontradas con repeticiones incluidas y verifica cuantas veces se repitio
                 if($categorias_encontradas_norepeat[$f]==$categorias_encontradas[$f1]){
                     $repetidos++;
